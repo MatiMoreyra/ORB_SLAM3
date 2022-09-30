@@ -1,0 +1,22 @@
+{
+    "build": {
+        "dockerfile": "../dockerization/Dockerfile",
+        "cacheFrom": "matimoreyra/orb3"
+    },
+    "runArgs": [
+        "--gpus", "all",
+        "--net", "host", 
+        "-e", "DISPLAY=${env:DISPLAY}",
+        "-v", "/tmp/.X11-unix:/tmp/.X11-unix",
+        "-e", "QT_X11_NO_MITSHM=1"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint"
+            ]
+        }
+    },
+    "initializeCommand": "xhost +"
+
+}
