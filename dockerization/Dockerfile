@@ -29,28 +29,24 @@ RUN echo "source /opt/ros/melodic/setup.bash" >> ~/.bash_profile
 
 
 RUN apt-get install -y \
-        # Base tools
-        cmake \
-        build-essential \
-        git \
-        unzip \
-        pkg-config \
-        python-dev \
-        # OpenCV dependencies
-        python-numpy \
-        # Pangolin dependencies
-        libgl1-mesa-dev \
-        libglew-dev \
-        libpython2.7-dev \
-        libeigen3-dev \
-        apt-transport-https \
-        ca-certificates\
-        software-properties-common
+    # Base tools
+    cmake \
+    build-essential \
+    git \
+    unzip \
+    pkg-config \
+    python-dev \
+    # OpenCV dependencies
+    python-numpy \
+    # Pangolin dependencies
+    libgl1-mesa-dev \
+    libglew-dev \
+    libpython2.7-dev \
+    libeigen3-dev \
+    apt-transport-https \
+    ca-certificates\
+    software-properties-common
 
-RUN curl -fsSL https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-RUN add-apt-repository "deb https://download.sublimetext.com/ apt/stable/"
-RUN apt update
-RUN apt install -y sublime-text
 
 # Build OpenCV (3.0 or higher should be fine)
 RUN apt-get install -y python3-dev python3-numpy 
